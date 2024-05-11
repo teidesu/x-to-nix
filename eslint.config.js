@@ -12,5 +12,6 @@ export default antfu({
         'style/max-statements-per-line': ['error', { max: 2 }],
         'import/order': ['error', { 'newlines-between': 'always' }],
         'antfu/if-newline': 'off',
+        'yaml/indent': ['error', 2],
     },
 })
