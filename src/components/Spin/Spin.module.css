@@ -1,0 +1,12 @@
+.spinner {
+    display: block;
+
+    animation: spin 1s linear infinite;
+    color: var(--fg);
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}

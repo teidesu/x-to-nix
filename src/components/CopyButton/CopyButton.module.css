@@ -1,0 +1,19 @@
+.button {
+    position: relative;
+}
+
+.popup {
+    position: absolute;
+    z-index: 999;
+    top: 0px;
+    right: calc(100% + 8px);
+    height: 100%;
+    border: 1px solid var(--secondary);
+    border-radius: 12px;
+    padding: 12px;
+    background: var(--primary-control);
+}
+
+.iconOverlay {
+    position: absolute
+}

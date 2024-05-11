@@ -1,0 +1,33 @@
+.error {
+    white-space: pre;
+    font-family: monospace;
+}
+
+.snippet {
+    background: #ffebeb;
+    padding: 0.5rem 0.75rem;
+    color: #8f0000;
+    flex: 1;
+}
+
+.snippetWrap {
+    display: flex;
+    align-items: stretch;
+    border-radius: 8px;
+    overflow: auto;
+    width: 100%;
+}
+
+.snippetBorder {
+    width: 4px;
+    background: #8f0000;
+}
+
+.message {
+    margin-top: 0.5rem;
+    white-space: pre-wrap;
+}
+
+.messagePrefix {
+    color: #8f0000;
+}

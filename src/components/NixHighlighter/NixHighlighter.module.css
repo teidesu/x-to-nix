@@ -1,0 +1,18 @@
+.code {
+    font-family: monospace;
+    white-space: pre;
+    overflow: auto;
+    height: 100%;
+}
+
+.code :global(.shiki) {
+    margin: 0;
+}
+
+@media (prefers-color-scheme: dark) {
+    .code :global(.shiki),
+    .code :global(.shiki span) {
+        color: var(--shiki-dark) !important;
+        background-color: var(--shiki-dark-bg) !important;
+    }
+  }

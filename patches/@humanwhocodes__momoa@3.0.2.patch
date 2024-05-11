@@ -1,0 +1,53 @@
+diff --git a/dist/momoa.d.ts b/dist/momoa.d.ts
+index 31db7fecbcffd782b0a982307398c06aa406d109..911af3c8a3f17f2d2f079dfdcf30db12db96e3d8 100644
+--- a/dist/momoa.d.ts
++++ b/dist/momoa.d.ts
+@@ -363,4 +363,10 @@ declare namespace types {
+     export function member(name: StringNode$1, value: ValueNode$1, parts?: NodeParts$1): MemberNode$1;
+ }
+ 
++export class ErrorWithLocation extends Error {
++    readonly originalMessage: string
++    readonly line: number
++    readonly column: number
++}
++
+ export { AnyNode, ArrayNode, BooleanNode, DocumentNode, ElementNode, FilterPredicate, JSONValue, Location, MemberNode, Mode, Node, NodeParts, NullNode, NumberNode, ObjectNode, ParseOptions, StringNode, Token, TokenType, TokenizeOptions, ValueNode, evaluate, iterator, parse, print, tokenize, traverse, types };
+diff --git a/dist/momoa.js b/dist/momoa.js
+index 0658d7e8528465012f8cd0f997a6c0015610cc4d..f5ea472dfdcf9ea11df2f00b1a00ea4f35f9c320 100644
+--- a/dist/momoa.js
++++ b/dist/momoa.js
+@@ -75,7 +75,7 @@ const knownTokenTypes = new Map([
+ /**
+  * Base class that attaches location to an error.
+  */
+-class ErrorWithLocation extends Error {
++export class ErrorWithLocation extends Error {
+ 
+     /**
+      * Creates a new instance.
+@@ -102,6 +102,8 @@ class ErrorWithLocation extends Error {
+          * @type {number}
+          */
+         this.offset = offset;
++
++        this.originalMessage = message;
+     }
+ 
+ }
+@@ -998,6 +1000,7 @@ function parse(text, options) {
+     
+                 if (token.type === "Comma") {
+                     token = next();
++                    if (token.type === "RBrace") break; // trailing comma
+                 } else {
+                     break;
+                 }
+@@ -1045,6 +1048,7 @@ function parse(text, options) {
+               
+                 if (token.type === "Comma") {
+                     token = next();
++                    if (token.type === "RBracket") break; // trailing comma
+                 } else {
+                     break;
+                 }

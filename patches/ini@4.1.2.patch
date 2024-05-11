@@ -1,0 +1,30 @@
+diff --git a/lib/ini.js b/lib/ini.js
+index 0e8623ee699294618cc2af8da8f10922992d3b39..88e48534b9fe3dc88de7c874d7466511352016b0 100644
+--- a/lib/ini.js
++++ b/lib/ini.js
+@@ -268,10 +268,10 @@ const unsafe = val => {
+   return val
+ }
+ 
+-module.exports = {
+-  parse: decode,
++export {
++  decode as parse,
+   decode,
+-  stringify: encode,
++  encode as stringify,
+   encode,
+   safe,
+   unsafe,
+diff --git a/package.json b/package.json
+index caa36d223f09cab8ea52f20236b1ea953b3e8e6b..60201eb8cc084df5801739fb2ab38fbac02e356a 100644
+--- a/package.json
++++ b/package.json
+@@ -8,6 +8,7 @@
+     "url": "https://github.com/npm/ini.git"
+   },
+   "main": "lib/ini.js",
++  "type": "module",
+   "scripts": {
+     "eslint": "eslint",
+     "lint": "eslint \"**/*.{js,cjs,ts,mjs,jsx,tsx}\"",

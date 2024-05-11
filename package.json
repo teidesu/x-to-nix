@@ -1,0 +1,48 @@
+{
+    "name": "x-to-nix",
+    "type": "module",
+    "version": "0.0.0",
+    "private": true,
+    "scripts": {
+        "dev": "vite",
+        "test": "vitest",
+        "build": "tsc && vite build",
+        "preview": "vite preview"
+    },
+    "dependencies": {
+        "@floating-ui/dom": "^1.6.5",
+        "@humanwhocodes/momoa": "^3.0.2",
+        "clsx": "^2.1.1",
+        "ini": "^4.1.2",
+        "js-toml": "^1.0.0",
+        "monaco-editor": "^0.48.0",
+        "monaco-editor-core": "^0.48.0",
+        "monaco-yaml": "^5.1.1",
+        "shiki": "^1.5.0",
+        "solid-floating-ui": "^0.3.1",
+        "solid-js": "^1.8.15",
+        "solid-split-pane": "^0.0.5",
+        "solid-transition-group": "^0.2.3",
+        "yaml": "^2.4.2"
+    },
+    "devDependencies": {
+        "@antfu/eslint-config": "^2.17.0",
+        "@shikijs/monaco": "^1.5.1",
+        "@types/ini": "^4.1.0",
+        "@types/node": "^20.12.11",
+        "patch-package": "^8.0.0",
+        "postcss": "^8.4.38",
+        "postcss-nesting": "^12.1.2",
+        "typescript": "^5.2.2",
+        "vite": "^5.2.0",
+        "vite-plugin-checker": "^0.6.4",
+        "vite-plugin-solid": "^2.10.2",
+        "vitest": "^1.6.0"
+    },
+    "pnpm": {
+        "patchedDependencies": {
+            "@humanwhocodes/momoa@3.0.2": "patches/@humanwhocodes__momoa@3.0.2.patch",
+            "ini@4.1.2": "patches/ini@4.1.2.patch"
+        }
+    }
+}

@@ -1,0 +1,28 @@
+.button {
+    padding: 8px 12px;
+    border: none;
+    background: var(--primary);
+    color: var(--detail);
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s, transform 0.2s;
+    transition-timing-function: ease-in-out;
+
+    &:hover {
+        background: var(--primary-hover);
+    }
+
+    &:active {
+        transform: scale(0.95);
+    }
+}
+
+.square {
+    padding: 12px;
+    width: min-content;
+}
+
+.outline {
+    background-color: var(--primary-control);
+    border: 1px solid var(--secondary);
+}

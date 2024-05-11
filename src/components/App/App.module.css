@@ -1,0 +1,78 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    background: var(--bg);
+    height: 100%;
+}
+
+.controls {
+    background: var(--primary);
+    padding: 1rem;
+    margin: 0 1rem;
+    border-radius: 0 0 16px 16px;
+    display: flex;
+    gap: 0.5em;
+    align-items: center;
+    font-size: 0.8rem;
+}
+
+.editors {
+    padding: 1rem;
+    display: flex;
+    height: 100%;
+    overflow: hidden;
+}
+
+.gutter {
+    cursor: col-resize;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--detail);
+}
+
+.pane {
+    padding: 1rem;
+    background: var(--primary);
+    border-radius: 16px;
+    position: relative;
+}
+
+
+.loaderWrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.loader {
+    width: 48px;
+    height: 48px;
+    color: var(--detail)
+}
+
+.resultWrap {
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+}
+
+.copyButton {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+}
+
+.langSelect {
+    max-width: 80px;
+}
+
+.spacer {
+    flex: 1;
+}
+
+.github {
+    padding: 8px;
+}
